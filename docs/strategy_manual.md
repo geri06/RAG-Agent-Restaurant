@@ -1,12 +1,12 @@
-# Manual de Estrategia de Customer Success — Haddock
+# Manual de Estrategia de Customer Success — Company
 
 > Documento interno. Versión 1.2. Uso exclusivo del equipo de CX y Ventas.
 
 ---
 
-## 1. Filosofía de Customer Success en Haddock
+## 1. Filosofía de Customer Success en Company
 
-Haddock no es un proveedor de software. Somos el **copiloto financiero del restaurante**.
+Company no es un proveedor de software. Somos el **copiloto financiero del restaurante**.
 Nuestro trabajo es asegurarnos de que cada cliente vea un ROI claro y medible desde el primer mes.
 
 Cuando un restaurante tiene problemas, no esperamos a que nos llamen. **Nosotros los llamamos primero.**
@@ -33,10 +33,10 @@ El email debe tener un tono empático, no alarmista.
 Proponer siempre una videollamada de 20 minutos.
 
 **Paso 3 — En la videollamada**
-Mostrar el dashboard de Haddock con:
+Mostrar el dashboard de Company con:
 - Comparativa del precio del restaurante vs. precio de mercado actual
 - Proyección del impacto en margen si el precio sigue subiendo
-- Alternativas: proveedores alternativos indexados en Haddock, ajuste de carta
+- Alternativas: proveedores alternativos indexados en Company, ajuste de carta
 
 **Paso 4 — Ofrecer upgrade si aplica**
 Si el cliente está en plan básico, este es el momento ideal para mostrar el
@@ -74,12 +74,12 @@ y comparativas de precios en tiempo real con 200+ proveedores.
 
 ### Template A: Alerta de Coste de Ingrediente
 
-**Asunto:** Haddock detectó una variación en tus costes — Te contamos
+**Asunto:** Company detectó una variación en tus costes — Te contamos
 
 **Cuerpo:**
 Hola [Nombre],
 
-Desde Haddock hemos notado que el precio de [ingrediente] en tus facturas
+Desde Company hemos notado que el precio de [ingrediente] en tus facturas
 ha subido un [X]% en las últimas [N] semanas.
 
 Queremos ayudarte a entender el impacto en tu margen y explorar opciones.
@@ -87,7 +87,7 @@ Queremos ayudarte a entender el impacto en tu margen y explorar opciones.
 
 Un saludo,
 [Nombre del CSM]
-Equipo Haddock
+Equipo Company
 
 ---
 

@@ -15,21 +15,21 @@ CURRENT STATUS: STUB
 WRITES TO STATE: notification_sent (bool)
 """
 
-from agent.graph.state import HaddockState
+from agent.graph.state import CompanyState
 
 
-async def notifier_node(state: HaddockState) -> HaddockState:
+async def notifier_node(state: CompanyState) -> CompanyState:
     """
     LangGraph node: notifies the Sales team (via Slack stub).
 
     Parameters
     ----------
-    state : HaddockState
+    state : CompanyState
         Must have `alerts` and `email_draft`.
 
     Returns
     -------
-    HaddockState
+    CompanyState
         Updated state with `notification_sent = True`.
     """
     print("\n📣 [notifier_node] Sending Slack notification (STUB)...")
@@ -46,7 +46,7 @@ async def notifier_node(state: HaddockState) -> HaddockState:
     )
 
     slack_message = f"""
-🚨 *Haddock-Flow Alert* — Restaurantes en Riesgo
+🚨 *Company-Flow Alert* — Restaurantes en Riesgo
 
 {alert_lines}
 

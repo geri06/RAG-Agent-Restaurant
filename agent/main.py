@@ -24,12 +24,12 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 from agent.graph.graph import graph
-from agent.graph.state import HaddockState
+from agent.graph.state import CompanyState
 from agent.observability.langfuse_handler import get_langfuse_callback
 
 # ── App setup ────────────────────────────────────────────────────────────────
 app = FastAPI(
-    title="Haddock-Flow",
+    title="Company-Flow",
     description="Internal AI agent for Customer Success & Sales teams.",
     version="0.1.0",
 )
@@ -48,7 +48,7 @@ app.add_middleware(
 @app.get("/healthz", tags=["infra"])
 async def health_check():
     """Returns 200 OK if the server is running. Used by monitoring tools."""
-    return {"status": "ok", "service": "haddock-flow"}
+    return {"status": "ok", "service": "company-flow"}
 
 
 @app.post("/api/run", tags=["agent"])
@@ -62,7 +62,7 @@ async def run_agent():
     """
     # The initial state — all fields start empty
     # Analysts will populate `alerts`, then subsequent nodes fill the rest
-    initial_state: HaddockState = {
+    initial_state: CompanyState = {
         "alerts": [],
         "strategy_advice": "",
         "email_draft": "",

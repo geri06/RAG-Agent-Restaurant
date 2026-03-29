@@ -1,5 +1,5 @@
 def main():
-    print("Hello from haddock-flow!")
+    print("Hello from company-flow!")
 
 
 if __name__ == "__main__":

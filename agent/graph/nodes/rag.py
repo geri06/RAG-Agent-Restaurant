@@ -20,22 +20,22 @@ FLOW:
 WRITES TO STATE: strategy_advice (str)
 """
 
-from agent.graph.state import HaddockState
+from agent.graph.state import CompanyState
 from agent.rag.retriever import retrieve
 
 
-async def rag_node(state: HaddockState) -> HaddockState:
+async def rag_node(state: CompanyState) -> CompanyState:
     """
     LangGraph node: retrieves strategy advice from the knowledge base.
 
     Parameters
     ----------
-    state : HaddockState
+    state : CompanyState
         Must contain `alerts` (populated by analyst_node).
 
     Returns
     -------
-    HaddockState
+    CompanyState
         Updated state with `strategy_advice` populated.
     """
     print("\n📚 [rag_node] Searching strategy manual...")

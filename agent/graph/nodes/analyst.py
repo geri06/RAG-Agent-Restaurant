@@ -16,24 +16,24 @@ WRITES TO STATE: alerts (list of Alert dicts)
 from sqlalchemy import select, func
 from agent.db.session import get_session
 from agent.db.models import Restaurant, Invoice, LineItem
-from agent.graph.state import HaddockState, Alert
+from agent.graph.state import CompanyState, Alert
 
 # Ingredients with a cost increase above this % are flagged
 THRESHOLD_PCT = 15.0
 
 
-async def analyst_node(state: HaddockState) -> HaddockState:
+async def analyst_node(state: CompanyState) -> CompanyState:
     """
     LangGraph node: queries DB and detects rising ingredient costs.
 
     Parameters
     ----------
-    state : HaddockState
+    state : CompanyState
         The current agent state (alerts will be empty at this point).
 
     Returns
     -------
-    HaddockState
+    CompanyState
         Updated state with `alerts` list populated.
     """
     print("\n🔍 [analyst_node] Scanning invoices for cost anomalies...")

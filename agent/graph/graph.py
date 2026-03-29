@@ -21,7 +21,7 @@ THIS GRAPH:
 
 from langgraph.graph import StateGraph, START, END
 
-from agent.graph.state import HaddockState
+from agent.graph.state import CompanyState
 from agent.graph.nodes.analyst import analyst_node
 from agent.graph.nodes.rag import rag_node
 from agent.graph.nodes.writer import writer_node
@@ -38,7 +38,7 @@ def build_graph():
         A compiled, runnable graph object.
     """
     # 1. Create the graph builder, specifying the state type
-    builder = StateGraph(HaddockState)
+    builder = StateGraph(CompanyState)
 
     # 2. Add all nodes (name → function mapping)
     builder.add_node("analyst", analyst_node)

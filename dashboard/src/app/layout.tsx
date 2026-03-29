@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Haddock-Flow | Ops Intelligence",
-  description: "Internal AI multi-agent dashboard for Haddock Customer Success",
+  title: "Company-Flow | Ops Intelligence",
+  description: "Internal AI multi-agent dashboard for Company Customer Success",
 };
 
 export default function RootLayout({

@@ -12,7 +12,7 @@ WHY GROQ + LLAMA 3?
 
 HOW THE PROMPT WORKS:
   We construct a "system + user" message pair:
-  - system: defines the AI persona ("Fina", Haddock's internal assistant)
+  - system: defines the AI persona ("Company Digital Assistant", Company's internal assistant)
   - user:   provides the alert data + strategy advice as context
 
 WRITES TO STATE: email_draft (str)
@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from agent.graph.state import HaddockState
+from agent.graph.state import CompanyState
 
 load_dotenv()
 
@@ -36,25 +36,25 @@ llm = ChatGroq(
 )
 
 SYSTEM_PROMPT = """
-Eres "Fina", la asistente de IA interna de Haddock.
+Eres "Company Digital Assistant", el asistente de IA interno de Company.
 Tu rol es ayudar al equipo de Customer Success a redactar comunicaciones
 claras, empáticas y orientadas a solución para los restaurantes clientes.
 Escribe siempre en español profesional. Sé concisa y directa.
 """.strip()
 
 
-async def writer_node(state: HaddockState) -> HaddockState:
+async def writer_node(state: CompanyState) -> CompanyState:
     """
     LangGraph node: uses Llama 3 via Groq to draft a client email.
 
     Parameters
     ----------
-    state : HaddockState
+    state : CompanyState
         Must have `alerts` and `strategy_advice`.
 
     Returns
     -------
-    HaddockState
+    CompanyState
         Updated state with `email_draft` populated.
     """
     print("\n✍️  [writer_node] Drafting email with Llama 3 via Groq...")
@@ -74,14 +74,14 @@ async def writer_node(state: HaddockState) -> HaddockState:
 Alertas detectadas:
 {alert_summary}
 
-Consejo estratégico de Haddock (basado en nuestro manual):
+Consejo estratégico de Company (basado en nuestro manual):
 {state['strategy_advice']}
 
 Redacta un email profesional para el equipo de Customer Success
 que puedan enviar al restaurante. El email debe:
 1. Reconocer la situación del restaurante con empatía
 2. Proponer una reunión para revisar sus datos y optimizar costes
-3. Ofrecer el valor específico de Haddock (visibilidad de precios de mercado)
+3. Ofrecer el valor específico de Company (visibilidad de precios de mercado)
 4. Terminar con un call-to-action claro
 """.strip()
 

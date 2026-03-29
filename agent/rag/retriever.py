@@ -37,7 +37,7 @@ embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
 # ── pgvector connection ──────────────────────────────────────────────────────
 # We reuse the same Postgres DB but store embeddings in a separate table
-COLLECTION_NAME = "haddock_strategy"
+COLLECTION_NAME = "company_strategy"
 
 _vectorstore: Optional[PGVector] = None
 

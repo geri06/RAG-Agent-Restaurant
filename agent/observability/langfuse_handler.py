@@ -13,7 +13,7 @@ WHAT IS LANGFUSE?
 WHY IS THIS IMPORTANT?
   - You can debug why an agent gave a wrong answer
   - You can measure latency and cost per run
-  - Haddock's JD explicitly mentions this as a "stand out" requirement
+  - Company's JD explicitly mentions this as a "stand out" requirement
 
 HOW TO USE:
   Import `get_langfuse_callback` and pass it as a callback to ainvoke():

@@ -29,7 +29,7 @@ class Alert(TypedDict):
     weeks_observed: int
 
 
-class HaddockState(TypedDict):
+class CompanyState(TypedDict):
     """
     The shared state that flows through all agent nodes.
 
