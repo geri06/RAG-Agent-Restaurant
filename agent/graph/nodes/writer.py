@@ -31,7 +31,7 @@ load_dotenv()
 # temperature=0.3 → fairly focused, low creativity (we want professional emails)
 llm = ChatGroq(
     model="llama-3.1-8b-instant",  # Fast, free, 8-billion parameter open-source model
-    temperature=0.3,
+    temperature=0.1,
     api_key=os.environ["GROQ_API_KEY"],
 )
 

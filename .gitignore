@@ -16,6 +16,7 @@ build/
 .env
 .env.local
 .env.*.local
+.env.example
 
 # ─── Node / Next.js ───────────────────────────────────────
 dashboard/node_modules/
@@ -31,3 +32,4 @@ dashboard/.pnpm-store/
 # ─── OS ───────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
+

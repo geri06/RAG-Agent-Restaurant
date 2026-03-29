@@ -27,7 +27,7 @@ HOW TO USE:
 
 import os
 from dotenv import load_dotenv
-from langfuse.callback import CallbackHandler
+from langfuse.langchain import CallbackHandler
 
 load_dotenv()
 
@@ -43,10 +43,6 @@ def get_langfuse_callback() -> CallbackHandler:
     CallbackHandler
         LangChain-compatible callback that sends traces to Langfuse.
     """
-    return CallbackHandler(
-        public_key=os.environ["LANGFUSE_PUBLIC_KEY"],
-        secret_key=os.environ["LANGFUSE_SECRET_KEY"],
-        host=os.environ.get("LANGFUSE_HOST", "https://cloud.langfuse.com"),
-        # trace_name labels this run in the Langfuse UI
-        trace_name="haddock-flow-run",
-    )
+    # Langfuse automatically reads LANGFUSE_PUBLIC_KEY, LANGFUSE_SECRET_KEY, 
+    # and LANGFUSE_HOST from environment variables.
+    return CallbackHandler()
