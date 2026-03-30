@@ -1,0 +1,402 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title span {
+  color: var(--accent);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+/* ── INITIAL LANDING ─────────────────────────────────────────────────────── */
+
+.initialLanding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.initialTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.initialSubtitle {
+  font-size: 1.05rem;
+  color: #a1a1aa;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── PRICES TABLE ────────────────────────────────────────────────────────── */
+
+.pricesSection {
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.pricesSectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.pricesTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.pricesTable thead th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  color: #a1a1aa;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.pricesTable tbody td {
+  padding: 0.6rem 0.75rem;
+  color: #e4e4e7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pricesTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.priceCell {
+  font-weight: 600;
+  color: #ffffff !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.dateCell {
+  color: #71717a !important;
+  font-size: 0.9rem;
+}
+
+/* ── ADD INVOICE FORM ────────────────────────────────────────────────────── */
+
+.addInvoiceSection {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.4s ease-in;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  text-align: left;
+}
+
+.formInput,
+.formSelect {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  border-color: var(--accent);
+}
+
+.formSelect option {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.addButton {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.addButton:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.addButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formFeedback {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ── BACK BUTTON ─────────────────────────────────────────────────────────── */
+
+.backButton {
+  background: transparent;
+  color: #a1a1aa;
+  border: 1px solid var(--card-border);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── CONTROL CENTER ──────────────────────────────────────────────────────── */
+
+.controlCenter {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── RUN BUTTON ──────────────────────────────────────────────────────────── */
+
+.runButton {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.runButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--accent-glow);
+  background: #4f46e5;
+}
+
+.runButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  animation: pulse 1.5s infinite;
+}
+
+.runButtonLarge {
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  margin-top: 0.5rem;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.statusMessage {
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+/* ── RESULTS GRID ────────────────────────────────────────────────────────── */
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 0.5rem;
+  color: #e4e4e7;
+}
+
+.alertList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.alertCard {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alertCard h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #fca5a5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.alertDetail {
+  font-size: 0.9rem;
+  color: #d4d4d8;
+  margin: 0;
+}
+
+/* ── EMAIL VIEWER ────────────────────────────────────────────────────────── */
+
+.emailViewer {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.emailHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.emailLine {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+}
+
+.emailLine strong {
+  color: #e4e4e7;
+  display: inline-block;
+  width: 60px;
+}
+
+.emailBody {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e4e4e7;
+  white-space: pre-wrap;
+}
