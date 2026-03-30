@@ -78,11 +78,15 @@ Consejo estratégico de Company (basado en nuestro manual):
 {state['strategy_advice']}
 
 Redacta un email profesional para el equipo de Customer Success
-que puedan enviar al restaurante. El email debe:
-1. Reconocer la situación del restaurante con empatía
-2. Proponer una reunión para revisar sus datos y optimizar costes
-3. Ofrecer el valor específico de Company (visibilidad de precios de mercado)
-4. Terminar con un call-to-action claro
+que puedan enviar al restaurante. 
+
+REGLAS ESTRICTAS PARA EL CORREO:
+1. Dirígete SIEMPRE al restaurante por su nombre real (extraído de las alertas detectadas arriba). ¡Bajo ningún concepto uses placeholders como "[Nombre de restaurante]"!
+2. Nombra EXPLÍCITAMENTE cada uno de los productos que han subido de precio y comunica su respectivo incremento.
+3. Reconoce la situación del restaurante con empatía.
+4. Propón una reunión para revisar sus datos y optimizar costes, ofreciendo el valor específico de Company (visibilidad de precios de mercado).
+5. Termina con un call-to-action claro.
+6. El correo DEBE estar firmado única y exclusivamente como "Asistente Digital".
 """.strip()
 
     # Call the LLM — this is the actual AI generation

@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--card-border);
   padding-bottom: 1.5rem;
 }
@@ -33,53 +33,213 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex-grow: 1; /* Allow it to grow to fill space */
+  flex-grow: 1;
 }
+
+/* ── INITIAL LANDING ─────────────────────────────────────────────────────── */
 
 .initialLanding {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-grow: 1;
   text-align: center;
   gap: 1.5rem;
-  margin-top: -15vh; /* Push upwards from true center */
 }
 
 .initialTitle {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
-  color: #ffffff; /* Brighter white */
+  color: #ffffff;
   letter-spacing: -0.03em;
   margin: 0;
 }
 
 .initialSubtitle {
-  font-size: 1.1rem;
-  color: #e4e4e7; /* Brighter gray */
+  font-size: 1.05rem;
+  color: #a1a1aa;
   margin: 0;
+  max-width: 600px;
 }
 
-.runButtonLarge {
-  font-size: 1.1rem;
-  padding: 1rem 3rem;
-  margin-top: 1rem;
+/* ── PRICES TABLE ────────────────────────────────────────────────────────── */
+
+.pricesSection {
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.4s ease-in;
 }
+
+.pricesSectionTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.pricesTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.pricesTable thead th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  color: #a1a1aa;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.pricesTable tbody td {
+  padding: 0.6rem 0.75rem;
+  color: #e4e4e7;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.pricesTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.priceCell {
+  font-weight: 600;
+  color: #ffffff !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.dateCell {
+  color: #71717a !important;
+  font-size: 0.9rem;
+}
+
+/* ── ADD INVOICE FORM ────────────────────────────────────────────────────── */
+
+.addInvoiceSection {
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.4s ease-in;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+  text-align: left;
+}
+
+.formInput,
+.formSelect {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 0.5rem 0.6rem;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  border-color: var(--accent);
+}
+
+.formSelect option {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.addButton {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.addButton:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.addButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.formFeedback {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* ── BACK BUTTON ─────────────────────────────────────────────────────────── */
+
+.backButton {
+  background: transparent;
+  color: #a1a1aa;
+  border: 1px solid var(--card-border);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── CONTROL CENTER ──────────────────────────────────────────────────────── */
 
 .controlCenter {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  padding: 2rem;
-  text-align: center;
+  padding: 1.5rem 2rem;
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
+
+/* ── RUN BUTTON ──────────────────────────────────────────────────────────── */
 
 .runButton {
   background: var(--accent);
@@ -107,6 +267,12 @@
   animation: pulse 1.5s infinite;
 }
 
+.runButtonLarge {
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  margin-top: 0.5rem;
+}
+
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 var(--accent-glow); }
   70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
@@ -117,6 +283,8 @@
   color: #a1a1aa;
   font-size: 0.9rem;
 }
+
+/* ── RESULTS GRID ────────────────────────────────────────────────────────── */
 
 .resultsGrid {
   display: grid;
@@ -151,7 +319,7 @@
 }
 
 .alertCard {
-  background: rgba(239, 68, 68, 0.05); /* Slight red tint */
+  background: rgba(239, 68, 68, 0.05);
   border: 1px solid rgba(239, 68, 68, 0.2);
   border-radius: 12px;
   padding: 1.25rem;
@@ -189,6 +357,8 @@
   color: #d4d4d8;
   margin: 0;
 }
+
+/* ── EMAIL VIEWER ────────────────────────────────────────────────────────── */
 
 .emailViewer {
   background: var(--card-bg);
@@ -229,14 +399,4 @@
   line-height: 1.6;
   color: #e4e4e7;
   white-space: pre-wrap;
-}
-
-.emptyState {
-  background: var(--card-bg);
-  border: 1px dashed var(--card-border);
-  border-radius: 12px;
-  padding: 3rem;
-  text-align: center;
-  color: #71717a;
-  grid-column: 1 / -1;
 }
